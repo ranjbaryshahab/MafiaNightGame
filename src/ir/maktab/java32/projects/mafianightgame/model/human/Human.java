@@ -7,6 +7,8 @@ public abstract class Human {
     private boolean alive;
     private String message;
 
+    public String vote(){return null;}
+
     public Integer getId() {
         return id;
     }
