@@ -8,6 +8,7 @@ import java.util.List;
 public class Mafia extends Human {
     private Integer idMafia;
     private List<Citizen> citizens;
+    private List<Mafia> mafias;
 
     public Integer getIdMafia() {
         return idMafia;
@@ -23,6 +24,14 @@ public class Mafia extends Human {
 
     public void setCitizens(List<Citizen> citizens) {
         this.citizens = citizens;
+    }
+
+    public List<Mafia> getMafias() {
+        return mafias;
+    }
+
+    public void setMafias(List<Mafia> mafias) {
+        this.mafias = mafias;
     }
 
     public String voteByMafia(){
