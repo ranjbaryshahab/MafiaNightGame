@@ -34,7 +34,8 @@ public class Mafia extends Human {
         this.mafias = mafias;
     }
 
-    public String voteByMafia(){
+    //Every night mafias choose one of humanList for kill
+    public Human voteByMafia() {
         return null;
     }
 }
