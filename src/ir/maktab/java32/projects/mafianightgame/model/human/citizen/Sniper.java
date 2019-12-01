@@ -7,7 +7,6 @@ import java.util.Random;
 
 public class Sniper extends Citizen {
     private static Sniper sniper = null;
-    private List<Human> aliveList;
 
     private Sniper() {
     }
@@ -19,22 +18,21 @@ public class Sniper extends Citizen {
         return sniper;
     }
 
-    public List<Human> getAliveList() {
-        return aliveList;
-    }
-
-    public void setAliveList(List<Human> aliveList) {
-        this.aliveList = aliveList;
-    }
-
     Random random = new Random();
 
     //if aliveList size == 10 has to kill someone of aliveList.
-    public Human kill() {
-        Human hasToKill = null;
+    public Human kill(List<Human> aliveList) {
+        Human randomElement = null;
         if (aliveList.size() == 10) {
-            hasToKill = aliveList.get(random.nextInt(aliveList.size()));
+            //Choose a random number of 1 until humanList size
+            int humanRandomId = random.nextInt((aliveList.size() - 1)) + 1;
+            //Getting human by id and return it
+            Human kill = Human.getHumanById(aliveList, humanRandomId);
+            //Delete from list
+            Human.deleteHumanById(aliveList,humanRandomId);
+            return kill;
         }
-        return hasToKill;
+        return null;
+
     }
 }

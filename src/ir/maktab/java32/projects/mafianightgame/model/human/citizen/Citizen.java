@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Random;
 
 public class Citizen extends Human {
+
     private Integer idCitizen;
-    private List<Human> humanList;
 
     public Integer getIdCitizen() {
         return idCitizen;
@@ -17,38 +17,23 @@ public class Citizen extends Human {
         this.idCitizen = idCitizen;
     }
 
-    public List<Human> getHumanList() {
-        return humanList;
-    }
+    Random random = new Random();
 
-    public void setHumanList(List<Human> humanList) {
-        this.humanList = humanList;
-    }
-
-    Random humanLIstRandom = new Random();
 
     @Override
-    public List<String> vote() {
-        List<Human> backFromVote = null;
-       // String message = null;
-        List<String> listMessageFromVote = null;
-        //return a random variable from humanList to make vote per humanList member(size)
-        for(int i = 0; i<= humanList.size();i++) {
-            Human randomElement = humanList.get(humanLIstRandom.nextInt(humanList.size()));
-            randomElement.setMessage("in my mind the (%d) is mafia member" + randomElement.getId());
-            listMessageFromVote.add(randomElement.getMessage())  ;
-            backFromVote.add(randomElement);
-        }
-
-        return listMessageFromVote;
+    //Return a random variable from humanList to make vote per humanList member(size)
+    public Human vote(List<Human> humanList) {
+        Human randomElement = null;
+        //Choose a random number of 1 until humanList size
+        int humanRandomId = random.nextInt((humanList.size() - 1)) + 1;
+        //Getting human by id
+        return Human.getHumanById(humanList, humanRandomId);
     }
 
     @Override
     public String toString() {
         return "Citizen{" +
                 "idCitizen=" + idCitizen +
-                ", humanList=" + humanList +
-                ", humanLIstRandom=" + humanLIstRandom +
-                '}';
+                "} " + super.toString();
     }
 }
