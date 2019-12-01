@@ -1,14 +1,12 @@
 package ir.maktab.java32.projects.mafianightgame.model.human.mafia;
 
 import ir.maktab.java32.projects.mafianightgame.model.human.Human;
-import ir.maktab.java32.projects.mafianightgame.model.human.citizen.Citizen;
 
 import java.util.List;
+import java.util.Random;
 
 public class Mafia extends Human {
     private Integer idMafia;
-    private List<Citizen> citizens;
-    private List<Mafia> mafias;
 
     public Integer getIdMafia() {
         return idMafia;
@@ -18,24 +16,17 @@ public class Mafia extends Human {
         this.idMafia = idMafia;
     }
 
-    public List<Citizen> getCitizens() {
-        return citizens;
-    }
-
-    public void setCitizens(List<Citizen> citizens) {
-        this.citizens = citizens;
-    }
-
-    public List<Mafia> getMafias() {
-        return mafias;
-    }
-
-    public void setMafias(List<Mafia> mafias) {
-        this.mafias = mafias;
-    }
-
     //Every night mafias choose one of humanList for kill
-    public Human voteByMafia() {
-        return null;
+    public Human voteByMafia(List<Human> humanList) {
+        Random random = new Random();
+        //Choose a random number of 1 until humanList size
+        int humanRandomId = random.nextInt((humanList.size() - 1)) + 1;
+        //This condition check class type and list size < 10
+        if (Human.getHumanById(humanList, humanRandomId).getClass().getSimpleName().equals("Mafia") && humanList.size() < 10) {
+            return Human.getHumanById(humanList, humanRandomId);
+        } else {
+            humanRandomId = random.nextInt((humanList.size() - 1)) + 1;
+        }
+        return Human.getHumanById(humanList, humanRandomId);
     }
 }
