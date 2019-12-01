@@ -6,10 +6,11 @@ public abstract class Human {
     private Integer id;
     private String name;
     private boolean canBeTalk;
-    private boolean alive;
     private String message;
 
-    public List<String> vote(){return null;}
+    public Human vote(List<Human> humanList) {
+        return null;
+    }
 
     public Integer getId() {
         return id;
@@ -43,12 +44,23 @@ public abstract class Human {
         this.canBeTalk = canBeTalk;
     }
 
-    public boolean isAlive() {
-        return alive;
+    //Get human by id with humanRandomId number
+    public static Human getHumanById(List<Human> humanList, int id) {
+        for (Human human : humanList) {
+            if (human.getId().equals(id))
+                return human;
+        }
+        return null;
     }
 
-    public void setAlive(boolean alive) {
-        this.alive = alive;
+    //This method prints the humanList
+    public static void printAllHumanList(List<Human> humanList) {
+        humanList.forEach(System.out::println);
+    }
+
+    //This method delete human of humanList
+    public static void deleteHumanById(List<Human> humanList, int id) {
+        humanList.remove(getHumanById(humanList, id));
     }
 
     @Override
@@ -57,7 +69,6 @@ public abstract class Human {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", canBeTalk=" + canBeTalk +
-                ", alive=" + alive +
                 ", message='" + message + '\'' +
                 '}';
     }
