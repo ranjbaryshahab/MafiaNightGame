@@ -5,7 +5,6 @@ import ir.maktab.java32.projects.mafianightgame.model.human.Human;
 import java.util.List;
 
 public class Doctor extends Citizen {
-    private List<Human> humanList;
     private static Doctor doctor = null;
 
     private Doctor() {
@@ -18,18 +17,9 @@ public class Doctor extends Citizen {
         return doctor;
     }
 
-    @Override
-    public List<Human> getHumanList() {
-        return humanList;
-    }
-
-    @Override
-    public void setHumanList(List<Human> humanList) {
-        this.humanList = humanList;
-    }
 
     //return random human of humanList
-    private Human save() {
+    private Human save(List<Human> humanList) {
         return null;
     }
 }
