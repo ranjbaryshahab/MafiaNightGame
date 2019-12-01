@@ -4,6 +4,7 @@ import ir.maktab.java32.projects.mafianightgame.model.human.Human;
 import ir.maktab.java32.projects.mafianightgame.model.human.mafia.Mafia;
 
 import java.util.List;
+import java.util.Random;
 
 public class Detective extends Citizen {
     private List<Mafia> mafiaList;
@@ -38,7 +39,20 @@ public class Detective extends Citizen {
     }
 
     //Choose select random id from humanList and if it is mafia save in mafiaList else save in citizenList
-    public void guess(List<Human> humanList) {
+    public Human guess(List<Human> humanList) {
 
+        //determines given list's size. (comment by Alireza)
+        int humansCount = humanList.size();
+
+        //selects a 'random human' to know if he is mafia or not. (comment by Alireza)
+        int randomIndex = new Random().nextInt(humansCount);
+        Human randomHuman = humanList.get(randomIndex);
+
+        return randomHuman;
+
+        //(comment by Alireza)
+        //detective can't add the guessed human to any list because detective doesn't know mafias.
+        //so i changed this method from 'void' to 'Human'.
+        //god receives 'random human'. and god will add the 'random human' to mafiaList or citizenList (in Detective object).
     }
 }
