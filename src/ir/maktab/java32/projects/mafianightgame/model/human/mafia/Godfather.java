@@ -35,10 +35,6 @@ public class Godfather extends Mafia {
         this.humanList = humanList;
     }
 
-    public static void setGodfather(Godfather godfather) {
-        Godfather.godfather = godfather;
-    }
-
     //Choose select random human of mustBeKilled and humanList
     public Human kill() {
         return null;

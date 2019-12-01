@@ -28,10 +28,6 @@ public class Doctor extends Citizen {
         this.humanList = humanList;
     }
 
-    public static void setDoctor(Doctor doctor) {
-        Doctor.doctor = doctor;
-    }
-
     //return random human of humanList
     private Human save() {
         return null;

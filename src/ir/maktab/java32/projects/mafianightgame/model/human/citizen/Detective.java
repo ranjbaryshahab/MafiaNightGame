@@ -47,10 +47,6 @@ public class Detective extends Citizen {
         this.citizenList = citizenList;
     }
 
-    public static void setDetective(Detective detective) {
-        Detective.detective = detective;
-    }
-
     //Choose select random id from humanList and if it is mafia save in mafiaList else save in citizenList
     public void guess() {
 

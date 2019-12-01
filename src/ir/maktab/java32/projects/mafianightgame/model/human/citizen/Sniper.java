@@ -19,10 +19,6 @@ public class Sniper extends Citizen {
         return sniper;
     }
 
-    public static void setSniper(Sniper sniper) {
-        Sniper.sniper = sniper;
-    }
-
     public List<Human> getAliveList() {
         return aliveList;
     }
