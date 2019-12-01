@@ -1,5 +1,7 @@
 package ir.maktab.java32.projects.mafianightgame.model.human;
 
+import java.util.List;
+
 public abstract class Human {
     private Integer id;
     private String name;
@@ -7,7 +9,7 @@ public abstract class Human {
     private boolean alive;
     private String message;
 
-    public String vote(){return null;}
+    public List<String> vote(){return null;}
 
     public Integer getId() {
         return id;
