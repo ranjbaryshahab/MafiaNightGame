@@ -20,16 +20,12 @@ public class Sniper extends Citizen {
 
     //if aliveList size == 10 has to kill someone of aliveList.
     public Human kill(List<Human> aliveList) {
-        if (aliveList.size() == 10) {
             //Choose a random number of 1 until humanList size
-            int humanRandomId = new Random().nextInt((aliveList.size() - 1)) + 1;
+            int humanRandomId = new Random().nextInt(aliveList.size()) + 1;
+            System.out.println("sniper :" + humanRandomId);
             //Getting human by id and return it
             Human kill = Human.getHumanById(aliveList, humanRandomId);
-            //Delete from list
-            Human.deleteHumanById(aliveList, humanRandomId);
             return kill;
-        }
-        return null;
     }
 
 

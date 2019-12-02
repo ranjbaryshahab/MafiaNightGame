@@ -1,6 +1,7 @@
 package ir.maktab.java32.projects.mafianightgame.model.human.citizen;
 
 import ir.maktab.java32.projects.mafianightgame.model.human.Human;
+import ir.maktab.java32.projects.mafianightgame.model.human.mafia.Mafia;
 
 import java.util.List;
 import java.util.Objects;
@@ -26,15 +27,8 @@ public class Citizen extends Human {
         return null;
     }
 
-
-    @Override
-    //Return a random variable from humanList to make vote per humanList member(size)
-    public Human vote(List<Human> humanList) {
-        Human randomElement = null;
-        //Choose a random number of 1 until humanList size
-        int humanRandomId = new Random().nextInt((humanList.size() - 1)) + 1;
-        //Getting human by id
-        return Human.getHumanById(humanList, humanRandomId);
+    public static void deleteCitizenById(List<Citizen> citizenList, int id) {
+        citizenList.remove(getCitizenById(citizenList, id));
     }
 
     @Override

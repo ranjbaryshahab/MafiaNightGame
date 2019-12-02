@@ -2,6 +2,7 @@ package ir.maktab.java32.projects.mafianightgame.model.human;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Random;
 
 public abstract class Human {
     private Integer id;
@@ -10,7 +11,10 @@ public abstract class Human {
     private String message;
 
     public Human vote(List<Human> humanList) {
-        return null;
+        //Choose a random number of 1 until humanList size
+        int humanRandomId = new Random().nextInt((humanList.size()-1))+1;
+        //Getting human by id
+        return Human.getHumanById(humanList, humanRandomId);
     }
 
     public Integer getId() {

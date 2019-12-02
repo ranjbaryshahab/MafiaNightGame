@@ -48,6 +48,7 @@ public class Godfather extends Mafia {
             human = Citizen.getCitizenById(voteByMafia, id);
         } else {
             int mafiaRandomId = new Random().nextInt((mafiaList.size() - 1)) + 1;
+
             //Getting mafia by id
             human = Mafia.getMafiaById(mafiaList, mafiaRandomId);
         }

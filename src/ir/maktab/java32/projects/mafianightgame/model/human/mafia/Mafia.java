@@ -26,10 +26,16 @@ public class Mafia extends Human {
         return null;
     }
 
+
+    public static void deleteMafiaById(List<Mafia> mafiaList, int id) {
+        mafiaList.remove(getMafiaById(mafiaList, id));
+    }
+
     //Every night mafias choose one of humanList for kill
     public Citizen voteByMafia(List<Citizen> citizenList) {
         //Choose a random number of 1 until citizenList size
-        int citizenRandomId = new Random().nextInt((citizenList.size() - 1)) + 1;
+        int citizenRandomId = new Random().nextInt(citizenList.size() ) + 1;
+
         //Getting citizen by id
         return Citizen.getCitizenById(citizenList, citizenRandomId);
     }
@@ -54,4 +60,5 @@ public class Mafia extends Human {
     public int hashCode() {
         return Objects.hash(super.hashCode(), getIdMafia());
     }
+
 }

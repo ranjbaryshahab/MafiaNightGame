@@ -42,7 +42,7 @@ public class Detective extends Citizen {
     public Human guess(List<Human> humanList) {
 
         //selects a 'random human' to know if he is mafia or not. (comment by Alireza)
-        int randomIndex = new Random().nextInt((humanList.size() - 1)) + 1;
+        int randomIndex = new Random().nextInt(humanList.size()) + 1;
 
         return Human.getHumanById(humanList, randomIndex);
 
