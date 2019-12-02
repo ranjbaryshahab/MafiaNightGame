@@ -24,6 +24,7 @@ public class Natasha extends Mafia {
         //The list of length message of citizens
         List<Integer> lengthMessageList = new ArrayList<>();
         //Add length message of citizens in lengthMessageList.
+
         for (Citizen citizen : citizenList)
             lengthMessageList.add(citizen.getMessage().length());
         //Find max length of lengthMessageList.
@@ -40,4 +41,6 @@ public class Natasha extends Mafia {
         talkativeCitizen.setCanBeTalk(false);
         return talkativeCitizen;
     }
+
+
 }

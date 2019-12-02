@@ -18,19 +18,13 @@ public class Doctor extends Citizen {
         return doctor;
     }
 
-
-    //return random human of humanList
+    //Return random human of humanList
     public Human save(List<Human> humanList) {
+        //Selects a random human to know if he is mafia's target or not. (comment by Alireza)
+        int randomIndex = new Random().nextInt((humanList.size() - 1)) + 1;
 
-        //determines given list's size. (comment by Alireza)
-        int humansCount = humanList.size();
-
-        //selects a random human to know if he is mafia's target or not. (comment by Alireza)
-        int randomIndex = new Random().nextInt(humansCount);
-        Human randomHuman = humanList.get(randomIndex);
-
-        return randomHuman;
-
-        //god will analyze doctor's choice and god decide to save someone or not. (comment by Alireza)
+        //God will analyze doctor's choice and god decide to save someone or not. (comment by Alireza)
+        System.out.println(randomIndex);
+        return Human.getHumanById(humanList,randomIndex);
     }
 }

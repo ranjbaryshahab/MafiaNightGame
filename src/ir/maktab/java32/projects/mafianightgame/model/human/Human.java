@@ -1,6 +1,7 @@
 package ir.maktab.java32.projects.mafianightgame.model.human;
 
 import java.util.List;
+import java.util.Objects;
 
 public abstract class Human {
     private Integer id;
@@ -71,5 +72,21 @@ public abstract class Human {
                 ", canBeTalk=" + canBeTalk +
                 ", message='" + message + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Human)) return false;
+        Human human = (Human) o;
+        return isCanBeTalk() == human.isCanBeTalk() &&
+                Objects.equals(getId(), human.getId()) &&
+                Objects.equals(getName(), human.getName()) &&
+                Objects.equals(getMessage(), human.getMessage());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getName(), isCanBeTalk(), getMessage());
     }
 }

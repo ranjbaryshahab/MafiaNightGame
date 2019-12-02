@@ -41,14 +41,10 @@ public class Detective extends Citizen {
     //Choose select random id from humanList and if it is mafia save in mafiaList else save in citizenList
     public Human guess(List<Human> humanList) {
 
-        //determines given list's size. (comment by Alireza)
-        int humansCount = humanList.size();
-
         //selects a 'random human' to know if he is mafia or not. (comment by Alireza)
-        int randomIndex = new Random().nextInt(humansCount);
-        Human randomHuman = humanList.get(randomIndex);
+        int randomIndex = new Random().nextInt((humanList.size() - 1)) + 1;
 
-        return randomHuman;
+        return Human.getHumanById(humanList, randomIndex);
 
         //(comment by Alireza)
         //detective can't add the guessed human to any list because detective doesn't know mafias.
