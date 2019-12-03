@@ -5,6 +5,11 @@ import ir.maktab.java32.projects.mafianightgame.model.human.Human;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * @author Shahab
+ * @author Mohamad Hosein
+ * @author Alireza
+ */
 public class Sniper extends Citizen {
     private static Sniper sniper = null;
 
@@ -18,14 +23,10 @@ public class Sniper extends Citizen {
         return sniper;
     }
 
-    //if aliveList size == 10 has to kill someone of aliveList.
+    //Kill a human
     public Human kill(List<Human> aliveList) {
-            //Choose a random number of 1 until humanList size
-            int humanRandomId = new Random().nextInt(aliveList.size()) + 1;
-            System.out.println("sniper :" + humanRandomId);
-            //Getting human by id and return it
-            Human kill = Human.getHumanById(aliveList, humanRandomId);
-            return kill;
+        //Choose a random number of 1 until humanList size and return it.
+        return aliveList.get(new Random().nextInt(aliveList.size()));
     }
 
 

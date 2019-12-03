@@ -1,12 +1,15 @@
 package ir.maktab.java32.projects.mafianightgame.model.human.citizen;
 
 import ir.maktab.java32.projects.mafianightgame.model.human.Human;
-import ir.maktab.java32.projects.mafianightgame.model.human.mafia.Mafia;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.Random;
 
+/**
+ * @author Shahab
+ * @author Mohamad Hosein
+ * @author Alireza
+ */
 public class Citizen extends Human {
 
     private Integer idCitizen;
@@ -20,11 +23,14 @@ public class Citizen extends Human {
     }
 
     public static Citizen getCitizenById(List<Citizen> citizenList, int id) {
+        Citizen returnCitizen = null;
         for (Citizen citizen : citizenList) {
-            if (citizen.getIdCitizen().equals(id))
-                return citizen;
+            if (citizen.getId().equals(id)) {
+                returnCitizen = citizen;
+                break;
+            }
         }
-        return null;
+        return returnCitizen;
     }
 
     public static void deleteCitizenById(List<Citizen> citizenList, int id) {

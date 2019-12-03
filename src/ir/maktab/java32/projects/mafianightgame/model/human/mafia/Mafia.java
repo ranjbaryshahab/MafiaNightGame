@@ -7,6 +7,11 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Random;
 
+/**
+ * @author Shahab
+ * @author Mohamad Hosein
+ * @author Alireza
+ */
 public class Mafia extends Human {
     private Integer idMafia;
 
@@ -19,11 +24,14 @@ public class Mafia extends Human {
     }
 
     public static Mafia getMafiaById(List<Mafia> mafiaList, int id) {
+        Mafia returnMafia = null;
         for (Mafia mafia : mafiaList) {
-            if (mafia.getIdMafia().equals(id))
-                return mafia;
+            if (mafia.getId().equals(id)) {
+                returnMafia = mafia;
+                break;
+            }
         }
-        return null;
+        return returnMafia;
     }
 
 
@@ -34,10 +42,7 @@ public class Mafia extends Human {
     //Every night mafias choose one of humanList for kill
     public Citizen voteByMafia(List<Citizen> citizenList) {
         //Choose a random number of 1 until citizenList size
-        int citizenRandomId = new Random().nextInt(citizenList.size() ) + 1;
-
-        //Getting citizen by id
-        return Citizen.getCitizenById(citizenList, citizenRandomId);
+        return citizenList.get(new Random().nextInt(citizenList.size()));
     }
 
     @Override

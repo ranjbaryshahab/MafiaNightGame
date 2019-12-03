@@ -4,6 +4,11 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Random;
 
+/**
+ * @author Shahab
+ * @author Mohamad Hosein
+ * @author Alireza
+ */
 public abstract class Human {
     private Integer id;
     private String name;
@@ -12,9 +17,9 @@ public abstract class Human {
 
     public Human vote(List<Human> humanList) {
         //Choose a random number of 1 until humanList size
-        int humanRandomId = new Random().nextInt((humanList.size()-1))+1;
+        int humanRandomId = new Random().nextInt(humanList.size());
         //Getting human by id
-        return Human.getHumanById(humanList, humanRandomId);
+        return humanList.get(humanRandomId);
     }
 
     public Integer getId() {
@@ -51,16 +56,14 @@ public abstract class Human {
 
     //Get human by id with humanRandomId number
     public static Human getHumanById(List<Human> humanList, int id) {
+        Human returnHuman = null;
         for (Human human : humanList) {
-            if (human.getId().equals(id))
-                return human;
+            if (human.getId().equals(id)) {
+                returnHuman = human;
+                break;
+            }
         }
-        return null;
-    }
-
-    //This method prints the humanList
-    public static void printAllHumanList(List<Human> humanList) {
-        humanList.forEach(System.out::println);
+        return returnHuman;
     }
 
     //This method delete human of humanList

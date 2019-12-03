@@ -12,11 +12,16 @@ import ir.maktab.java32.projects.mafianightgame.model.human.mafia.Natasha;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
+/**
+ * @author Shahab
+ * @author Mohamad Hosein
+ * @author Alireza
+ */
 @SuppressWarnings("Duplicates")
 public class MafiaGame {
     public static void main(String[] args) {
+        //Create citizens
         Citizen citizen1 = new Citizen();
         Citizen citizen2 = new Citizen();
         Citizen citizen3 = new Citizen();
@@ -31,6 +36,7 @@ public class MafiaGame {
         Sniper sniper = Sniper.getSniper();
         Detective detective = Detective.getDetective();
 
+        //Create mafias
         Mafia mafia1 = new Mafia();
         Mafia mafia2 = new Mafia();
         Mafia mafia3 = new Mafia();
@@ -39,127 +45,147 @@ public class MafiaGame {
         Natasha natasha = Natasha.getNatasha();
         Godfather godfather = Godfather.getGodfather();
 
+        //Citizen 1
         citizen1.setId(1);
         citizen1.setName("alireza");
         citizen1.setMessage("Im not a mafia");
         citizen1.setCanBeTalk(true);
         citizen1.setIdCitizen(1);
 
+        //Citizen 2
         citizen2.setId(2);
         citizen2.setName("mohammadHosein");
         citizen2.setMessage("Im a citizen");
         citizen2.setCanBeTalk(true);
         citizen2.setIdCitizen(2);
 
+        //Citizen 3
         citizen3.setId(3);
         citizen3.setName("shahab");
         citizen3.setMessage("Im know the mafia");
         citizen3.setCanBeTalk(true);
         citizen3.setIdCitizen(3);
 
+        //Citizen 4
         citizen4.setId(4);
         citizen4.setName("poriya");
         citizen4.setMessage("Im not mafia");
         citizen4.setCanBeTalk(true);
         citizen4.setIdCitizen(4);
 
+        //Citizen 5
         citizen5.setId(5);
         citizen5.setName("hamid");
         citizen5.setMessage("Im know the natasha");
         citizen5.setCanBeTalk(true);
         citizen5.setIdCitizen(5);
 
+        //Citizen 6
         citizen6.setId(6);
         citizen6.setName("ali");
         citizen6.setMessage("Im a citizen");
         citizen6.setCanBeTalk(true);
         citizen6.setIdCitizen(6);
 
+        //Citizen 7
         citizen7.setId(7);
         citizen7.setName("naser");
         citizen7.setMessage("Im not mafia");
         citizen7.setCanBeTalk(true);
         citizen7.setIdCitizen(7);
 
+        //Citizen 8
         citizen8.setId(8);
         citizen8.setName("nader");
         citizen8.setMessage("Im know the godfather");
         citizen8.setCanBeTalk(true);
         citizen8.setIdCitizen(8);
 
+        //Citizen 9
         citizen9.setId(9);
         citizen9.setName("marjan");
         citizen9.setMessage("Im not mafia");
         citizen9.setCanBeTalk(true);
         citizen9.setIdCitizen(9);
 
+        //Citizen 10
         citizen10.setId(10);
         citizen10.setName("maryam");
         citizen10.setMessage("Im a citizen");
         citizen10.setCanBeTalk(true);
         citizen10.setIdCitizen(10);
 
-
+        //Citizen 11 (doctor)
         doctor.setId(11);
         doctor.setName("setare");
         doctor.setMessage("I suspect to the ali");
         doctor.setCanBeTalk(true);
         doctor.setIdCitizen(11);
 
+        //Citizen 12 (sniper)
         sniper.setId(12);
         sniper.setName("gholam");
         sniper.setMessage("Im not mafia");
         sniper.setCanBeTalk(true);
         sniper.setIdCitizen(12);
 
+        //Citizen 13
         detective.setId(13);
         detective.setName("abbas");
         detective.setMessage("Im suspect the shahab");
         detective.setCanBeTalk(true);
         detective.setIdCitizen(13);
 
+        //Mafia 1
         mafia1.setId(14);
         mafia1.setName("kamran");
         mafia1.setMessage("Im not mafia");
         mafia1.setCanBeTalk(true);
         mafia1.setIdMafia(1);
 
+        //Mafia 2
         mafia2.setId(15);
         mafia2.setName("mina");
         mafia2.setMessage("Im suspect the abbas");
         mafia2.setCanBeTalk(true);
         mafia2.setIdMafia(2);
 
+        //Mafia 3
         mafia3.setId(16);
         mafia3.setName("shila");
         mafia3.setMessage("Im a citizen");
         mafia3.setCanBeTalk(true);
         mafia3.setIdMafia(3);
 
+        //Mafia 4
         mafia4.setId(17);
         mafia4.setName("hadi");
         mafia4.setMessage("Im not doctor");
         mafia4.setCanBeTalk(true);
         mafia4.setIdMafia(4);
 
+        //Mafia 5
         mafia5.setId(18);
         mafia5.setName("sina");
         mafia5.setMessage("Im a citizen");
         mafia5.setCanBeTalk(true);
         mafia5.setIdMafia(5);
 
+        //Mafia 6 (natasha)
         natasha.setId(19);
         natasha.setName("navid");
-        natasha.setMessage("I heard the noise from marjan");
+        natasha.setMessage("Im not godfather");
         natasha.setCanBeTalk(true);
         natasha.setIdMafia(6);
 
+        //Mafia 7 (godfather)
         godfather.setId(20);
         godfather.setName("azhdar");
         godfather.setMessage("Im suspect the maryam");
         godfather.setCanBeTalk(true);
         godfather.setIdMafia(7);
 
+        //Create humans list and add all human to the list.
         List<Human> humanList = new ArrayList<>();
         humanList.add(citizen1);
         humanList.add(citizen2);
@@ -182,6 +208,7 @@ public class MafiaGame {
         humanList.add(natasha);
         humanList.add(godfather);
 
+        //Create citizens list and add all citizen in the list.
         List<Citizen> citizenList = new ArrayList<>();
         citizenList.add(citizen1);
         citizenList.add(citizen2);
@@ -197,6 +224,7 @@ public class MafiaGame {
         citizenList.add(sniper);
         citizenList.add(detective);
 
+        //Create mafias list and add all mafia in the list.
         List<Mafia> mafiaList = new ArrayList<>();
         mafiaList.add(mafia1);
         mafiaList.add(mafia2);
@@ -206,12 +234,19 @@ public class MafiaGame {
         mafiaList.add(natasha);
         mafiaList.add(godfather);
 
+        //Create god
         God god = God.getGod();
 
-        while (!god.checkWinnerGame(mafiaList,citizenList)) {
-            god.night(mafiaList, godfather, citizenList, humanList, doctor, sniper, natasha, detective);
-            god.day(humanList);
+        //In the while check if winner is false repeat it.
+        System.out.println("*************************************************************************");
+        while (!god.checkWinnerGame(mafiaList, citizenList)) {
+            god.night(humanList, citizenList, mafiaList, godfather, doctor, sniper, detective, natasha);
+            god.day(humanList, mafiaList, citizenList, detective);
+            System.out.println("*************************************************************************");
         }
+        //Show information about winners game.
+        System.out.println(god.getWinnerMessage());
+
 
     }
 }
