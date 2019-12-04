@@ -17,6 +17,7 @@ import java.util.List;
  * @author Shahab
  * @author Mohamad Hosein
  * @author Alireza
+ * @author Ali
  */
 @SuppressWarnings("Duplicates")
 public class MafiaGame {
